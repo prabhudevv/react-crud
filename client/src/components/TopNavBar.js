@@ -22,19 +22,19 @@ render() {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
             <MDBNavItem>
-              <MDBNavLink to={{ pathname: `/movies` }}>Movies</MDBNavLink>
+              <MDBNavLink to={{ pathname: `/movies` }}>All Movies</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink to={{ pathname: `/upcomingmovies` }}>Coming Soon</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-                <MDBNavLink to={{ pathname: `/kannadamovies` }}>Kannada Movies</MDBNavLink>
+                <MDBNavLink to={{ pathname: `/kannadamovies`,state:{'lang':'k'} }}>Kannada Movies</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-                <MDBNavLink to={{ pathname: `/englishmovies` }}>English Movies</MDBNavLink>
+                <MDBNavLink to={{ pathname: `/englishmovies`,state:{'lang':'e'} }}>English Movies</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-                <MDBNavLink to={{ pathname: `/hindimovies` }}>Hindi Movies</MDBNavLink>
+                <MDBNavLink to={{ pathname: `/hindimovies`,state:{'lang':'h'} }}>Hindi Movies</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>

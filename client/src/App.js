@@ -9,6 +9,7 @@ import UpcomingMovieList from "./components/assets/UpcomingMovieList";
 import KannadaMovieList from "./components/assets/KannadaMovieList";
 import EnglishMovieList from "./components/assets/EnglishMovieList";
 import HindiMovieList from "./components/assets/HindiMovieList";
+import MovieDetails from "./components/assets/MovieDetails";
 import './components/css/style.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/kannadamovies" component={KannadaMovieList}></Route>
             <Route exact path="/englishmovies" component={EnglishMovieList}></Route>
             <Route exact path="/hindimovies" component={HindiMovieList}></Route>
+            <Route exact path="/movies/details" component={MovieDetails}></Route>
           </Switch>
       </Router>
     </div>

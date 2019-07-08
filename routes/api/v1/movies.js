@@ -12,16 +12,42 @@ router.get('/',(req,res) => {
     })
 })
 
-//@route GET api/users/:id
-//@desc  Get a single user
-//@access Public
-// router.get('/:id',(req,res) => {
-//     var id = req.params.id;
-//     Movie.findById(id).then(movies => {
-//         res.json({data:movies,success:true,msg:'success'})
-//     }).catch(err => {
-//         res.json({data:null,success:false,msg:err})
-//     })
-// })
+router.get('/details/:id',(req,res) => {
+    var id = req.params.id;
+    Movie.findById(id).then(movies => {
+        res.json({data:movies,success:true,msg:'success'})
+    }).catch(err => {
+        res.json({data:null,success:false,msg:err})
+    })
+})
+
+router.get('/:lang',(req,res) => {
+    if(req.params.lang == 'k'){
+        Movie.find({
+            movieLanguage : 'K'
+        }).then(movies => {
+            res.json({data:movies,success:true,msg:'success'})
+        }).catch(err => {
+            res.json({data:null,success:false,msg:err})
+        })
+    } else if (req.params.lang == 'e') {
+        Movie.find({
+            movieLanguage : 'E'
+        }).then(movies => {
+            res.json({data:movies,success:true,msg:'success'})
+        }).catch(err => {
+            res.json({data:null,success:false,msg:err})
+        })
+    } else {
+        Movie.find({
+            movieLanguage : 'H'
+        }).then(movies => {
+            res.json({data:movies,success:true,msg:'success'})
+        }).catch(err => {
+            res.json({data:null,success:false,msg:err})
+        })
+    }
+
+})
 
 module.exports = router;
