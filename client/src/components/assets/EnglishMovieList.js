@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 class EnglistMovieList extends Component {
@@ -41,7 +40,9 @@ class EnglistMovieList extends Component {
         <MDBCardBody>
           <MDBCardTitle>{movie.movieName}</MDBCardTitle>
           <MDBCardText><i className="fa fa-star" aria-hidden="true"></i>&nbsp;{movie.movieRating}/10</MDBCardText>
-          <MDBBtn className="btn-sm" href="#">Read More</MDBBtn>
+          <Link to={{ pathname: `/movies/details`, state:{id:movie._id}}} color="primary"><MDBBtn className="btn-sm">
+                                    Read more
+                                </MDBBtn></Link>
         </MDBCardBody>
       </MDBCard>
     </MDBCol>

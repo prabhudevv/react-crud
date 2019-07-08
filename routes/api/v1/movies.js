@@ -26,6 +26,7 @@ router.get('/:lang',(req,res) => {
         Movie.find({
             movieLanguage : 'K'
         }).then(movies => {
+            console.log(movies)
             res.json({data:movies,success:true,msg:'success'})
         }).catch(err => {
             res.json({data:null,success:false,msg:err})

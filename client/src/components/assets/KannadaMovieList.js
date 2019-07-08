@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol} from 'mdbreact';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
