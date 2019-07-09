@@ -12,6 +12,8 @@ import HindiMovieList from "./components/assets/HindiMovieList";
 import MovieDetails from "./components/assets/MovieDetails";
 import Admin from "./components/assets/Admin";
 import UpdateMovie from "./components/assets/UpdateMovie";
+import DeleteMovie from "./components/assets/DeleteMovie";
+import AddMovie from "./components/assets/AddMovie";
 import './components/css/style.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
             <Route exact path="/movies/details" component={MovieDetails}></Route>
             <Route exact path="/admin" component={Admin}></Route>
             <Route exact path="/admin/edit" component={UpdateMovie}></Route>
+            <Route exact path="/admin/delete" component={DeleteMovie}></Route>
+            <Route exact path="/add" component={AddMovie}></Route>
           </Switch>
       </Router>
     </div>
