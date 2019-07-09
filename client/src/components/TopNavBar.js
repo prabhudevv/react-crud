@@ -45,6 +45,9 @@ render() {
                 </div>
               </MDBFormInline>
             </MDBNavItem>
+            <MDBNavItem>
+                <MDBNavLink to={{ pathname: `/admin` }}><i className="fa fa-user fa-lg" aria-hidden="true"></i></MDBNavLink>
+            </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>

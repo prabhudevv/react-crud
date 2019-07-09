@@ -28,6 +28,18 @@ var MovieSchema = new Schema({
     moviePoster : {
         type : String,
         required : "Movie Poster is required"
+    },
+    movieRating : {
+        type : String,
+        required : "Movie Poster is required"
+    },
+    videoLink : {
+        type : String,
+        required : "Video Link is required"
+    },
+    movieLanguage : {
+        type : String,
+        required : "Movie Language is required"
     }
 },
 {

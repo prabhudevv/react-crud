@@ -5,7 +5,7 @@ const server = express();
 const cors = require('cors');
 
 server.use(cors());
-
+server.use(bodyParser.json());
 const port = 8008
 
 //defining routes
