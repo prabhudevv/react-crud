@@ -133,7 +133,7 @@ router.put('/changestatus/:id', (req, res) => {
         wishList: true
     }
     Movie.findByIdAndUpdate(id, newData, {
-        new: true
+        new: wishList
     })
     .then(result => {
         res.json({
@@ -206,7 +206,7 @@ router.get('/:lang', (req, res) => {
                 msg: err
             })
         })
-    } else {
+    } else if (req.params.lang == 'h') {
         Movie.find({
             movieLanguage: 'H'
         }).then(movies => {

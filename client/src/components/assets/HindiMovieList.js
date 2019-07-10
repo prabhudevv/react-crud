@@ -3,7 +3,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class KannadaMovieList extends Component {
+class HindiMovieList extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -13,7 +13,7 @@ class KannadaMovieList extends Component {
 
   componentDidMount = () => {
     const lang = this.state.lang;
-    axios.get(`http://localhost:8008/api/v1/movies/wishlist/${lang}`)
+    axios.get(`http://localhost:8008/api/v1/movies/${lang}`)
     .then(response => {
         this.setState({
             data:response.data.data,
@@ -53,4 +53,4 @@ class KannadaMovieList extends Component {
     )
   }
 }
-export default KannadaMovieList;
+export default HindiMovieList;

@@ -3,7 +3,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class MovieList extends Component {
+class KannadaMovieList extends Component {
   constructor(props){
     super(props)
     this.state = {
@@ -53,4 +53,4 @@ class MovieList extends Component {
     )
   }
 }
-export default MovieList;
+export default KannadaMovieList;
