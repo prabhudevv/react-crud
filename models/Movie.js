@@ -40,6 +40,10 @@ var MovieSchema = new Schema({
     movieLanguage : {
         type : String,
         required : "Movie Language is required"
+    },
+    wishList : {
+        type : Boolean,
+        required : "Movie Language is required"
     }
 },
 {

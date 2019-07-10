@@ -80,6 +80,11 @@ class TopNavBar extends Component {
                 <i className="fa fa-user-circle fa-lg" aria-hidden="true" />
               </MDBNavLink>
             </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink to={{ pathname: `/wishlist`, state: { wishlist: "true" } }}>
+                <i className="fa fa-heart fa-xl" aria-hidden="true"/>
+              </MDBNavLink>
+            </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>

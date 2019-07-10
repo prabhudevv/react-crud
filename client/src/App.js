@@ -14,6 +14,8 @@ import Admin from "./components/assets/Admin";
 import UpdateMovie from "./components/assets/UpdateMovie";
 import DeleteMovie from "./components/assets/DeleteMovie";
 import AddMovie from "./components/assets/AddMovie";
+import MovieWishlist from "./components/assets/MovieWishlist";
+import ChangeStatus from "./components/assets/ChangeStatus";
 import './components/css/style.css';
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
             <Route exact path="/admin/edit" component={UpdateMovie}></Route>
             <Route exact path="/admin/delete" component={DeleteMovie}></Route>
             <Route exact path="/add" component={AddMovie}></Route>
+            <Route exact path="/wishlist" component={MovieWishlist}></Route>
+            <Route exact path="/movies/changestatus" component={ChangeStatus}></Route>
           </Switch>
       </Router>
     </div>

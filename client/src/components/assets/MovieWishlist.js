@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol} from 'mdbreact';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class KannadaMovieList extends Component {
+class MovieWishlist extends Component {
   constructor(props){
+      console.log(props)
     super(props)
     this.state = {
-      lang:props.location.state.lang
+      wishlist:props.location.state.wishlist
     }
   }
 
   componentDidMount = () => {
-    const lang = this.state.lang;
-    axios.get(`http://localhost:8008/api/v1/movies/wishlist/${lang}`)
+    const wishlist = this.state.wishlist;
+    axios.get(`http://localhost:8008/api/v1/movies/wishlist/${wishlist}`)
     .then(response => {
         this.setState({
             data:response.data.data,
@@ -25,7 +26,7 @@ class KannadaMovieList extends Component {
 
   render() {
     let result = this.state.data
-    console.log(result)
+    console.log(this)
     if(!result){
       return <div></div>
     }
@@ -53,4 +54,4 @@ class KannadaMovieList extends Component {
     )
   }
 }
-export default KannadaMovieList;
+export default MovieWishlist;

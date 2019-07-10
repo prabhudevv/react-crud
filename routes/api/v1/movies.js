@@ -123,6 +123,55 @@ router.put('/:id', (req, res) => {
         })
 })
 
+router.put('/changestatus/:id', (req, res) => {
+    var id = req.params.id;
+    var wishList = req.params.wishList;
+    console.log(req)
+    console.log("------")
+    console.log(res)
+    const newData = {
+        wishList: true
+    }
+    Movie.findByIdAndUpdate(id, newData, {
+        new: true
+    })
+    .then(result => {
+        res.json({
+            data: result,
+            success: true,
+            msg: 'Data updated successfully.'
+        })
+    }).catch(err => {
+        res.json({
+            data: null,
+            success: false,
+            msg: err
+        })
+    })
+})
+
+router.get('/wishlist/:wishlist', (req, res) => {
+    console.log(req)
+    if (req.params.wishlist == "true") {
+        Movie.find({
+            wishList: true
+        }).then(movies => {
+            console.log(movies)
+            res.json({
+                data: movies,
+                success: true,
+                msg: 'success'
+            })
+        }).catch(err => {
+            res.json({
+                data: null,
+                success: false,
+                msg: err
+            })
+        })
+    }
+})
+
 router.get('/:lang', (req, res) => {
     if (req.params.lang == 'k') {
         Movie.find({

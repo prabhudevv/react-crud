@@ -63,6 +63,24 @@ export default class MovieList extends Component {
                   >
                     <MDBBtn className="btn-sm">Read more</MDBBtn>
                   </Link>
+                  {
+                    (movie.wishList) ?
+                    <Link
+                    to={{
+                      pathname: `/movies/changestatus`,
+                      state: { id: movie._id, wishList: movie.wishList }
+                    }}
+                  >
+                      <i className="fa fa-heart fa-lg" aria-hidden="true" style={{ color: "red", cursor:"pointer" }}></i></Link>
+                      :
+                      <Link
+                      to={{
+                        pathname: `/movies/changestatus`,
+                        state: { id: movie._id, wishList: movie.wishList }
+                      }}
+                    >
+                      <i className="fa fa-heart fa-lg" aria-hidden="true" style={{ cursor:"pointer" }}></i></Link>
+                  }
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
