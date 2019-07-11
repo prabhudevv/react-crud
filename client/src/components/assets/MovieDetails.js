@@ -6,7 +6,6 @@ import axios from 'axios';
 class MovieDetails extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
     this.state = {
       id: props.location.state.id
     }
@@ -35,7 +34,6 @@ class MovieDetails extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="container-fluid">
         <div className="row">

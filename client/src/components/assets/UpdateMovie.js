@@ -6,7 +6,6 @@ import axios from 'axios';
 class UpdateMovie extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             id: props.location.state.id
         }
@@ -50,7 +49,6 @@ class UpdateMovie extends Component {
             movieLanguage: this.state.movieLanguage,
             videoLink: this.state.videoLink
         }
-        console.log(insertObj)
         axios.put(`http://localhost:8008/api/v1/movies/${insertObj.id}`, insertObj)
             .then(response => {
                 if (response.data.success) {
@@ -73,7 +71,6 @@ class UpdateMovie extends Component {
     }
 
     render() {
-        console.log(this.state.movieLanguage)
         return (
             <form onSubmit={this.formSubmit} >
                 <div className="container-fluid" style={{ padding: "0rem 2rem" }}>

@@ -4,7 +4,6 @@ import axios from "axios";
 class ChangeStatus extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       id: props.location.state.id,
       wishList: props.location.state.wishList
@@ -13,9 +12,10 @@ class ChangeStatus extends Component {
 
   componentDidMount = () => {
     const id = this.state.id;
+    const wishlist = this.state.wishList;
     var insertObj = {
-        id : this.state.id,
-        wishList : this.state.wishList
+      id: this.state.id,
+      wishlist: this.state.wishList
     }
     axios
       .put(`http://localhost:8008/api/v1/movies/changestatus/${id}`, insertObj)
@@ -34,7 +34,6 @@ class ChangeStatus extends Component {
   };
 
   render() {
-    console.log(this.props);
     return <div className="container-fluid" />;
   }
 }

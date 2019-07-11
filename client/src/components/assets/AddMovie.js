@@ -6,7 +6,6 @@ import axios from 'axios';
 class AddMovie extends Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.state = {
             movieName: "",
             moviePoster: "",
@@ -29,17 +28,16 @@ class AddMovie extends Component {
             [e.target.name]: e.target.value
         })
     }
-    
+
     componentDidMount = () => {
         axios.get(`http://localhost:8008/api/v1/movies/details/`)
-        .then(response => {
-            // console.log(response)
-            this.setState({
-                data:response.data.data,
+            .then(response => {
+                this.setState({
+                    data: response.data.data,
+                })
+            }).catch(err => {
+                console.log(err)
             })
-        }).catch(err => {
-            console.log(err)
-        })
     }
 
     formSubmit = (e) => {
@@ -56,7 +54,6 @@ class AddMovie extends Component {
             movieLanguage: this.state.movieLanguage,
             videoLink: this.state.videoLink
         }
-        console.log(insertObj)
         axios.post(`http://localhost:8008/api/v1/movies`, insertObj)
             .then(response => {
                 if (response.data.success) {
@@ -72,42 +69,41 @@ class AddMovie extends Component {
     }
 
     render() {
-        console.log(this.state.movieLanguage)
         return (
             <form onSubmit={this.formSubmit} >
                 <div className="container-fluid" style={{ padding: "0rem 2rem" }}>
                     <div className="row">
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Movie Name" name="movieName" value={this.state.movieName}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" label="Movie Name" name="movieName" value={this.state.movieName} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Director Name" name="directorName" value={this.state.directorName}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" label="Director Name" name="directorName" value={this.state.directorName} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Actor Name" name="actorName" value={this.state.actorName}  onChange={this.changeHandler} ></MDBInput>
-                        </MDBCol>
-                    </div>
-                    <div className="row">
-                        <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Music Director Name" name="musicDirectorName" value={this.state.musicDirectorName}  onChange={this.changeHandler} ></MDBInput>
-                        </MDBCol>
-                        <MDBCol className="col-md-4">
-                            <MDBInput type="text" className="datepicker" label="Release Date" name="releaseDate" value={this.state.releaseDate}  onChange={this.changeHandler} ></MDBInput>
-                        </MDBCol>
-                        <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Producer Name" name="producerName" value={this.state.producerName}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" label="Actor Name" name="actorName" value={this.state.actorName} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                     </div>
                     <div className="row">
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Poster Link" name="moviePoster" value={this.state.moviePoster}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" label="Music Director Name" name="musicDirectorName" value={this.state.musicDirectorName} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Movie Rating" name="movieRating" value={this.state.movieRating}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" className="datepicker" label="Release Date" name="releaseDate" value={this.state.releaseDate} onChange={this.changeHandler} ></MDBInput>
+                        </MDBCol>
+                        <MDBCol className="col-md-4">
+                            <MDBInput type="text" label="Producer Name" name="producerName" value={this.state.producerName} onChange={this.changeHandler} ></MDBInput>
+                        </MDBCol>
+                    </div>
+                    <div className="row">
+                        <MDBCol className="col-md-4">
+                            <MDBInput type="text" label="Poster Link" name="moviePoster" value={this.state.moviePoster} onChange={this.changeHandler} ></MDBInput>
+                        </MDBCol>
+                        <MDBCol className="col-md-4">
+                            <MDBInput type="text" label="Movie Rating" name="movieRating" value={this.state.movieRating} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
                             <label htmlFor="formGroupExampleInput">Select Language</label>
-                            <select className="browser-default custom-select" name="movieLanguage" value={this.state.movieLanguage}  onChange={this.changeHandler} >
+                            <select className="browser-default custom-select" name="movieLanguage" value={this.state.movieLanguage} onChange={this.changeHandler} >
                                 <option value="K">Kannada</option>
                                 <option value="E">English</option>
                                 <option value="H">Hindi</option>
@@ -116,7 +112,7 @@ class AddMovie extends Component {
                     </div>
                     <div className="row">
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Video Link" name="videoLink" value={this.state.videoLink}  onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="text" label="Video Link" name="videoLink" value={this.state.videoLink} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                     </div>
                     <div className="row">

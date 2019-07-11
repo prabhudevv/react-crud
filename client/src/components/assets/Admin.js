@@ -22,7 +22,6 @@ export default class Admin extends Component {
     axios
       .get("http://localhost:8008/api/v1/movies")
       .then(response => {
-        console.log(response);
         this.setState({
           data: response.data.data
         });
@@ -34,7 +33,6 @@ export default class Admin extends Component {
 
   render() {
     let result = this.state.data;
-    console.log(result);
     return (
       <div className="container-fluid">
         <div className="row">
@@ -55,7 +53,7 @@ export default class Admin extends Component {
                         Edit
                       </MDBBtn>
                     </Link>
-                    <Link to={{pathname: `/admin/delete`, state: { id: movie._id }}}>
+                    <Link to={{ pathname: `/admin/delete`, state: { id: movie._id } }}>
                       <MDBBtn color="primary" className="btn btn-sm">
                         Delete
                       </MDBBtn>

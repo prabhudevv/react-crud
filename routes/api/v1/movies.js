@@ -91,7 +91,6 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
     var id = req.params.id;
-    console.log(req.body)
     const newData = {
         movieName: req.body.movieName,
         directorName: req.body.directorName,
@@ -106,8 +105,8 @@ router.put('/:id', (req, res) => {
     }
 
     Movie.findByIdAndUpdate(id, newData, {
-            new: true
-        })
+        new: true
+    })
         .then(result => {
             res.json({
                 data: result,
@@ -125,38 +124,35 @@ router.put('/:id', (req, res) => {
 
 router.put('/changestatus/:id', (req, res) => {
     var id = req.params.id;
-    var wishList = req.params.wishList;
-    console.log(req)
-    console.log("------")
-    console.log(res)
+    var wishlist = req.body.wishlist;
+    //for fetching data from
+    // console.log(req.params.type)
     const newData = {
-        wishList: true
+        wishList: !wishlist
     }
     Movie.findByIdAndUpdate(id, newData, {
-        new: wishList
+        new: true
     })
-    .then(result => {
-        res.json({
-            data: result,
-            success: true,
-            msg: 'Data updated successfully.'
+        .then(result => {
+            res.json({
+                data: result,
+                success: true,
+                msg: 'Data updated successfully.'
+            })
+        }).catch(err => {
+            res.json({
+                data: null,
+                success: false,
+                msg: err
+            })
         })
-    }).catch(err => {
-        res.json({
-            data: null,
-            success: false,
-            msg: err
-        })
-    })
 })
 
 router.get('/wishlist/:wishlist', (req, res) => {
-    console.log(req)
     if (req.params.wishlist == "true") {
         Movie.find({
             wishList: true
         }).then(movies => {
-            console.log(movies)
             res.json({
                 data: movies,
                 success: true,
@@ -177,7 +173,6 @@ router.get('/:lang', (req, res) => {
         Movie.find({
             movieLanguage: 'K'
         }).then(movies => {
-            console.log(movies)
             res.json({
                 data: movies,
                 success: true,
