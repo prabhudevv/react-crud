@@ -1,3 +1,3 @@
 module.exports ={
-    mongoURI : 'mongodb://127.0.0.1:27017/imdb'
+    mongoURI : 'mongodb+srv://prabhudevv:prabhudevv@pvcluster0-ocegn.mongodb.net/imdb?retryWrites=true&w=majority'
 }
