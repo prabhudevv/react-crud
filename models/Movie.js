@@ -43,7 +43,8 @@ var MovieSchema = new Schema({
     },
     wishList : {
         type : Boolean,
-        required : "Movie Language is required"
+        required : "WishList is required",
+        default : false
     }
 },
 {
