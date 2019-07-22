@@ -12,7 +12,6 @@ class ChangeStatus extends Component {
 
   componentDidMount = () => {
     const id = this.state.id;
-    const wishlist = this.state.wishList;
     var insertObj = {
       id: this.state.id,
       wishlist: this.state.wishList
