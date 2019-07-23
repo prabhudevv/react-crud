@@ -17,6 +17,7 @@ import AddMovie from "./components/assets/AddMovie";
 import MovieWishlist from "./components/assets/MovieWishlist";
 import ChangeStatus from "./components/assets/ChangeStatus";
 import './components/css/style.css';
+import {NotificationContainer} from 'react-notifications';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/wishlist" component={MovieWishlist}></Route>
             <Route exact path="/movies/changestatus" component={ChangeStatus}></Route>
           </Switch>
+          <NotificationContainer/>
       </Router>
     </div>
   );

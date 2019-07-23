@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import alert from '../notifications/alertMessage';
 import { MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -53,6 +54,7 @@ class UpdateMovie extends Component {
             .then(response => {
                 if (response.data.success) {
                     this.props.history.push('/movies')
+                    alert('info');
                 } else {
                     this.setState({
                         color: 'danger',
