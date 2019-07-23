@@ -3,6 +3,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
+"mdbreact";
 import TopNavBar from "./components/TopNavBar";
 import MovieList from "./components/assets/MovieList";
 import UpcomingMovieList from "./components/assets/UpcomingMovieList";
@@ -37,9 +39,51 @@ function App() {
             <Route exact path="/add" component={AddMovie}></Route>
             <Route exact path="/wishlist" component={MovieWishlist}></Route>
             <Route exact path="/movies/changestatus" component={ChangeStatus}></Route>
+
+      <MDBCarousel
+        activeItem={1}
+        length={3}
+        showControls={false}
+        showIndicators={false}
+        className="z-depth-1"
+        slide
+      >
+        <MDBCarouselInner>
+          <MDBCarouselItem itemId="1">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://i.redd.it/kg7dlnm296t01.jpg"
+                alt="First slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+          <MDBCarouselItem itemId="2">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://i.imgur.com/CU9P6Eb.png"
+                alt="Second slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+          <MDBCarouselItem itemId="3">
+            <MDBView>
+              <img
+                className="d-block w-100"
+                src="https://www.wallpaperflare.com/static/71/379/672/spider-man-homecoming-2017-iron-man-cityscape-spider-man-wallpaper.jpg"
+                alt="Third slide"
+              />
+            </MDBView>
+          </MDBCarouselItem>
+        </MDBCarouselInner>
+      </MDBCarousel>
           </Switch>
           <NotificationContainer/>
+          
       </Router>
+
+
     </div>
   );
 }

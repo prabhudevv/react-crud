@@ -1,19 +1,17 @@
 import { NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
 
-export default alert = (type) => {
+export default alert = (type, msg) => {
   switch (type) {
     case 'info':
-      return NotificationManager.info('Info message');
+      return NotificationManager.info(msg, 'Info');
     case 'success':
-      return NotificationManager.success('Successfully Updated', 'Movies Updated');
+      return NotificationManager.success(msg, 'Success');
     case 'warning':
-      return NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+        return NotificationManager.warning(msg, 'Warning');
     case 'error':
-      return NotificationManager.error('Error message', 'Click me!', 5000, () => {
-        alert('callback');
-      });
+        return NotificationManager.error(msg, 'Error');
     default:
-      return NotificationManager.info('Info message');
+      return NotificationManager.info(msg, 'Info message');
   }
 };

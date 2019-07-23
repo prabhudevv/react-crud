@@ -54,7 +54,7 @@ class UpdateMovie extends Component {
             .then(response => {
                 if (response.data.success) {
                     this.props.history.push('/movies')
-                    alert('info');
+                    alert('success', 'Successfully Updated');
                 } else {
                     this.setState({
                         color: 'danger',

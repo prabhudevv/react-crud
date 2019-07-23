@@ -27,7 +27,7 @@ class TopNavBar extends Component {
     return (
       <MDBNavbar color="indigo" dark expand="md">
         <MDBNavbarBrand>
-          <strong className="white-text">IMDB</strong>
+        <MDBNavLink to={{ pathname: `/` }}  className="white-text">IMDB</MDBNavLink>
         </MDBNavbarBrand>
         <MDBNavbarToggler onClick={this.toggleCollapse} />
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

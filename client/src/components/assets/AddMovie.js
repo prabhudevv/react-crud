@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MDBCol, MDBInput, MDBBtn } from 'mdbreact';
 import { Link } from 'react-router-dom';
+import alert from '../notifications/alertMessage';
 import axios from 'axios';
 
 class AddMovie extends Component {
@@ -58,6 +59,7 @@ class AddMovie extends Component {
             .then(response => {
                 if (response.data.success) {
                     this.props.history.push('/movies')
+                    alert('success', 'Successfully Added New Movie');
                 } else {
                     this.setState({
                         color: 'danger',

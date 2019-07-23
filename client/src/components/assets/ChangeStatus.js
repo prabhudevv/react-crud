@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import alert from '../notifications/alertMessage';
 import axios from "axios";
 
 class ChangeStatus extends Component {
@@ -21,6 +22,7 @@ class ChangeStatus extends Component {
       .then(response => {
         if (response.data.success) {
           this.props.history.push("/movies");
+          alert('success', 'Added to Wishlist');
         } else {
           this.setState({
             color: "danger",
