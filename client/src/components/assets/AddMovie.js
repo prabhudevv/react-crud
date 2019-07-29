@@ -101,7 +101,7 @@ class AddMovie extends Component {
                             <MDBInput type="text" label="Poster Link" name="moviePoster" value={this.state.moviePoster} onChange={this.changeHandler} ></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
-                            <MDBInput type="text" label="Movie Rating" name="movieRating" value={this.state.movieRating} onChange={this.changeHandler} ></MDBInput>
+                            <MDBInput type="number" label="Movie Rating" name="movieRating" value={this.state.movieRating} onChange={this.changeHandler} min="0" max="10"></MDBInput>
                         </MDBCol>
                         <MDBCol className="col-md-4">
                             <label htmlFor="formGroupExampleInput">Select Language</label>
