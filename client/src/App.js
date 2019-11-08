@@ -3,7 +3,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView, MDBContainer } from
+import { MDBCarousel, MDBCarouselInner, MDBCarouselItem, MDBView } from
 "mdbreact";
 import TopNavBar from "./components/TopNavBar";
 import MovieList from "./components/assets/MovieList";
